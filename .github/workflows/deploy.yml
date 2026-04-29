@@ -1,9 +1,9 @@
-name: Deploy Lovable via FTP na Hostinger
+name: Deploy via FTP na Hostinger
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
@@ -16,9 +16,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
       - name: Build do projeto
         run: npm run build
@@ -33,8 +34,12 @@ jobs:
           port: 21
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: dist/
-          server-dir: /
-          dangerous-clean-slate: true
+          local-dir: ./dist/
+          server-dir: /public_html/
+          dangerous-clean-slate: false
           dry-run: false
           log-level: verbose
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
