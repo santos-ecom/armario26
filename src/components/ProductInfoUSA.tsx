@@ -27,7 +27,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       salePrice: 29.00,
       discount: "90%",
       label: "1 Unit",
-      url: "https://1izi5u-xh.myshopify.com/cart/45492774961337:1"
+      url: "https://espazzie.shop/checkout/?add-to-cart=9457"
     },
     {
       id: "2", 
@@ -38,7 +38,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       label: "2 Units",
       savings: "Save $13.00",
       popular: true,
-      url: "https://1izi5u-xh.myshopify.com/cart/45492774994105:1"
+      url: "https://espazzie.shop/checkout/?add-to-cart=9463"
     },
     {
       id: "3",
@@ -48,7 +48,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       discount: "93%",
       label: "3 Units",
       savings: "Save $29.00",
-      url: "https://1izi5u-xh.myshopify.com/cart/45492775026873:1"
+      url: "https://espazzie.shop/checkout/?add-to-cart=9464"
     },
     {
       id: "4",
@@ -58,7 +58,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       discount: "93%",
       label: "4 Units",
       savings: "Save $38.00",
-      url: "https://1izi5u-xh.myshopify.com/cart/45492775059641:1"
+      url: "https://espazzie.shop/checkout/?add-to-cart=9465"
     },
     {
       id: "5",
@@ -68,7 +68,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       discount: "93%",
       label: "5 Units",
       savings: "Save $46.00",
-      url: "https://1izi5u-xh.myshopify.com/cart/45492775092409:1"
+      url: "https://espazzie.shop/checkout/?add-to-cart=9466"
     }
   ];
 
