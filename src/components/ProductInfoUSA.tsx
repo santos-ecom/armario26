@@ -26,8 +26,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       originalPrice: 289.90,
       salePrice: 29.00,
       discount: "90%",
-      label: "1 Unit",
-      url: "https://espazzie.shop/checkout/?add-to-cart=9457"
+      label: "1 Unit"
     },
     {
       id: "2", 
@@ -37,8 +36,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       discount: "92%",
       label: "2 Units",
       savings: "Save $13.00",
-      popular: true,
-      url: "https://espazzie.shop/checkout/?add-to-cart=9463"
+      popular: true
     },
     {
       id: "3",
@@ -47,8 +45,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       salePrice: 58.00,
       discount: "93%",
       label: "3 Units",
-      savings: "Save $29.00",
-      url: "https://espazzie.shop/checkout/?add-to-cart=9464"
+      savings: "Save $29.00"
     },
     {
       id: "4",
@@ -57,8 +54,7 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       salePrice: 78.00,
       discount: "93%",
       label: "4 Units",
-      savings: "Save $38.00",
-      url: "https://espazzie.shop/checkout/?add-to-cart=9465"
+      savings: "Save $38.00"
     },
     {
       id: "5",
@@ -67,14 +63,29 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       salePrice: 99.00,
       discount: "93%",
       label: "5 Units",
-      savings: "Save $46.00",
-      url: "https://espazzie.shop/checkout/?add-to-cart=9466"
+      savings: "Save $46.00"
     }
   ];
 
+  const checkoutUrls = {
+    "white-oak": {
+      "1": "https://espazzie.shop/checkout/?add-to-cart=9457",
+      "2": "https://espazzie.shop/checkout/?add-to-cart=9463",
+      "3": "https://espazzie.shop/checkout/?add-to-cart=9464",
+      "4": "https://espazzie.shop/checkout/?add-to-cart=9465",
+      "5": "https://espazzie.shop/checkout/?add-to-cart=9466"
+    },
+    "pure-white": {
+      "1": "https://espazzie.shop/checkout/?add-to-cart=9467",
+      "2": "https://espazzie.shop/checkout/?add-to-cart=9472",
+      "3": "https://espazzie.shop/checkout/?add-to-cart=9473",
+      "4": "https://espazzie.shop/checkout/?add-to-cart=9474",
+      "5": "https://espazzie.shop/checkout/?add-to-cart=9475"
+    }
+  };
+
   const getSelectedUrl = () => {
-    const option = quantityOptions.find(option => option.id === selectedQuantity);
-    return option ? option.url : quantityOptions[0].url;
+    return checkoutUrls[selectedVariant as keyof typeof checkoutUrls][selectedQuantity as keyof typeof checkoutUrls["white-oak"]] || checkoutUrls["white-oak"]["1"];
   };
 
   const getSelectedPrice = () => {
