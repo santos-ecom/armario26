@@ -16,7 +16,6 @@ import ProductPageLOJA8 from "./pages/ProductPageLOJA8";
 import ProductPagePP from "./pages/ProductPagePP";
 import ProductPageBESTLICENCAS from "./pages/ProductPageBESTLICENCAS";
 import HomePage from "./pages/HomePage";
-import PasswordGate from "./components/PasswordGate";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +24,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <PasswordGate>
-        <BrowserRouter>
+      <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pt" element={<ProductPage />} />
@@ -44,7 +42,6 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </PasswordGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
