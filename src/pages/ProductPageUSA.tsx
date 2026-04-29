@@ -1,6 +1,5 @@
 import { useState } from "react";
 import HeaderUSA from "@/components/HeaderUSA";
-import BreadcrumbUSA from "@/components/BreadcrumbUSA";
 import ProductGallery from "@/components/ProductGallery";
 import ProductInfoUSA from "@/components/ProductInfoUSA";
 import ProductDetailsUSA from "@/components/ProductDetailsUSA";
@@ -14,7 +13,6 @@ const ProductPageUSA = () => {
     <div className="min-h-screen bg-background">
       <div className="w-full max-w-none md:max-w-sm md:mx-auto bg-background">
         <HeaderUSA />
-        <BreadcrumbUSA />
         
         <main className="px-4 py-4">
           {/* Single column layout - Mobile version for all devices */}

@@ -49,29 +49,37 @@ const ProductInfoUSA = ({ onVariantChange }: ProductInfoUSAProps) => {
       label: "3 Units",
       savings: "Save $29.00",
       url: "https://1izi5u-xh.myshopify.com/cart/45492775026873:1"
+    },
+    {
+      id: "4",
+      quantity: 4,
+      originalPrice: 1159.60,
+      salePrice: 78.00,
+      discount: "93%",
+      label: "4 Units",
+      savings: "Save $38.00",
+      url: "https://1izi5u-xh.myshopify.com/cart/45492775059641:1"
+    },
+    {
+      id: "5",
+      quantity: 5,
+      originalPrice: 1449.50,
+      salePrice: 99.00,
+      discount: "93%",
+      label: "5 Units",
+      savings: "Save $46.00",
+      url: "https://1izi5u-xh.myshopify.com/cart/45492775092409:1"
     }
   ];
 
-  const additionalUrls = {
-    "4": "https://1izi5u-xh.myshopify.com/cart/45492775059641:1",
-    "5": "https://1izi5u-xh.myshopify.com/cart/45492775092409:1"
-  };
-
   const getSelectedUrl = () => {
     const option = quantityOptions.find(option => option.id === selectedQuantity);
-    if (option) return option.url;
-    
-    return additionalUrls[selectedQuantity as keyof typeof additionalUrls] || quantityOptions[0].url;
+    return option ? option.url : quantityOptions[0].url;
   };
 
   const getSelectedPrice = () => {
     const option = quantityOptions.find(option => option.id === selectedQuantity);
-    if (option) return option.salePrice;
-    
-    const qty = parseInt(selectedQuantity);
-    if (qty === 4) return 78.00;
-    if (qty === 5) return 99.00;
-    return quantityOptions[0].salePrice;
+    return option ? option.salePrice : quantityOptions[0].salePrice;
   };
 
   const selectedOption = quantityOptions.find(option => option.id === selectedQuantity) || quantityOptions[0];
